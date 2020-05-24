@@ -2,8 +2,18 @@
 
   session_start();
   if(isset($_POST['id_a'])&&isset($_POST['count'])){
-
+    
       updateList($_POST['id_a'], $_POST['count']);
+
+    // 抓 如果前面是結帳 就走結帳 不是 回shopping cart
+    if($_POST['isDone']=='結帳'){ 
+      
+      echo "<script>location.href = '../../form/shopping/result.php'</script>";
+    
+    }
+
+
+
       echo "<script>location.href = '../../form/shopping/shoppingCart.php'</script>";
     
   }else {

@@ -2,7 +2,11 @@
 <script>
 
   function isChange(){
-     document.getElementById("form1").submit();
+    document.getElementById("cool").value = '修改';
+    document.getElementById("form1").submit();
+
+    
+    
   }
 
 
@@ -42,6 +46,7 @@
           echo "<tr>
               <td width=20%><img src=".$row['imgPath']."></td>
               <td width=20%>$row[name]</td>
+
               <td><input type='number' class='count' name='id_a[]' style='display:none;'  value='".$pid_temp."'></td>
               <td><input type='number' name='count[]' oninput=\"isChange()\" value='".$count_temp."'></td>
               <td width=20%>$:$sum</td>
@@ -61,6 +66,7 @@
 
   echo "<center><p>共計: 新台幣 ".number_format($amount). " 元整</p></center>";
 
+  echo "<input id='cool' type='text' name='isDone' style='display:none;' value='結帳' >";
   echo "<center><p>基本資料 : </p></center>";
   echo "<center>地址: <input type='text' style = 'font-size:0.6em;height:30px;width:300px;border-radius:5px;' value = '".$rowA['address']."'></center><p>";
   echo "<center>電話: <input type='text' style = 'font-size:0.6em;height:30px;width:300px;border-radius:5px;' value = '".$rowA['phone']."'></center><hr>";
