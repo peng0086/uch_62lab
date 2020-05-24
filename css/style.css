@@ -1,0 +1,245 @@
+/* top.html */
+	body {
+		background-size: 100%;
+		color: white;
+		font-family: DFKai-sb;
+		text-align: center;
+	}
+
+	#top {
+		font-size: 20px;
+	}
+
+	#onright {
+		margin-left: 83%;
+	}
+
+	#onright2 {
+		margin-left: 65%;
+		font-style: italic;
+	}
+
+	#top ul {
+		list-style-type: none;
+	    margin-left: 10%;
+	    padding: 0;
+	    overflow: hidden;
+	
+	}
+
+	#top li {
+		float: left;
+	}
+
+	#top li a {
+		display: block;
+	    color: #33FFFF;
+	    text-align: center;
+	    padding: 16px 22px;
+	    text-decoration: none;
+  		border-radius: 4px;
+	}
+		
+	#top li a:hover {
+		color: blue;
+	}
+		
+	#top li a:active {
+		background-color: dodgerblue;
+		color: white;
+	}
+
+	#top li a:visited {
+		color: #33FFFF;
+	}
+
+	#top li input {
+		border: 0;
+		background-color: black;
+		color: white;
+		border-radius: 15px;
+		cursor: pointer;
+		width: 100px;
+		height: 40px;
+		font-size: 20px;
+	}
+
+	#top li input:hover {
+		color: #33FFFF;
+		background-color: red;
+		border: 2px #33FFFF solid;
+	}
+
+/* home.php */
+	div.gallery {
+		margin: 25px;
+		border: 3px solid #33FFFF;
+		float: left;
+		width: 165px;
+		display: -webkit-inline-box;
+	}
+		
+	div.gallery:hover {
+		border: 2px solid blue;
+	}
+	
+	div.gallery img {
+		width: 100%;
+		height: auto;
+	}
+	
+	div.gallery:desc {
+		padding: 15px;
+		text-align: center;
+	}
+
+/* store.php */
+	#storeBox {	
+		display: inline-grid;
+		width: 100%;
+		grid-template-columns: repeat(5, 1fr); 
+		grid-gap: 30px;
+		text-align: center;
+	}
+
+	#storeBox .box {
+		border: 1px solid #33FFFF;
+		height: 100%;
+	}
+
+	#storeBox a {
+		color: white;
+		text-decoration: none;
+	}
+
+	#storeBox img {
+		width: 50%;
+	}
+	
+/* login.php and register.php and comment.php */
+	#content {
+		font-size: 25px;
+		height: 30px;
+		border-radius: 10px;
+	}
+
+	#form1 {
+		text-align: left;
+		margin-left: auto;
+  		margin-right: auto;
+	}	
+
+	#content #form1 input {
+		font-size: 20px;
+		width: 70%;
+		height: 40px;
+		border-radius: 10px;
+	}
+
+	#content #form1 textarea {
+		margin-top: 10px;
+		border-radius: 10px;
+	}	
+
+	#content input {
+		font-size: 20px;
+		height: 40px;
+		border-radius: 10px;
+	}
+
+	#content input:hover {
+		color: #220088;
+		background-color: #33FFFF;
+		border: 2px #220088 solid;
+	}
+
+	#content .nav {
+		float: left;
+		width: 25%;
+		height: 300px;
+		margin-left: 5%;
+		background-color: #000000;
+	}
+
+	#content .nav img {
+		padding-top: 67px;
+		height: 80%;
+		width: 80%;
+	}
+
+	#content .article {
+		float: left;
+		padding-left: 20px;
+		width: 65%;
+		height: 300px; /* only for demonstration, should be removed */
+		color: #FFFFFF;
+		text-align: left;
+		background-color: #000000; 
+	}
+
+/* Clear floats after the columns */
+	.section:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	table {
+		margin-left: 10%;
+		width: 80%;
+		font-size: 20px;
+		text-align: center;
+	}
+
+/* backstage backmenber.php and backproduct.php and backcomment.php */
+	.quercase-table {
+		margin-left: 230px;
+	}
+
+/* backstage editcomment.php */
+	.edit-content {
+	    width: 800px;
+	    margin: auto;
+	    border: 2px solid #33FFFF;
+	    background: rgb(0, 0,0,.8);
+	}
+
+	.edit-form {
+		font-size: 30px;
+		margin: auto;
+		width: 80%;
+		border-radius: 10px;
+		text-align: left;
+	}
+
+
+	.edit-form textarea {
+		margin-top: 10px;
+		border-radius: 10px;
+	}
+
+	.edit-form button {
+		width: 22%;
+		margin-bottom: 40px;
+		margin-left: 16%;
+		padding: 15px;
+		font-size: 20px;
+		border-radius: 10px;
+	}
+
+	.edit-form button:hover {
+		color: #220088;
+		background-color: #33FFFF;
+		border: 2px #220088 solid;
+	}
+
+
+	input[type=number]{
+		width: 60px;
+		text-align: center;
+		height: 30px;
+		border-radius: 5px;
+		font-size: 1em;
+
+
+	}

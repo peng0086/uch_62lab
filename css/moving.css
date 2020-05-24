@@ -1,0 +1,43 @@
+/*backstage backhome.php*/
+  .ml1 {
+    position: relative;
+    font-weight: 300;
+    font-size: 4.5em;
+    color: #33FFFF;
+  }
+
+  .ml1 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 15%;
+    padding-left: 15%;
+    padding-bottom: 15%;
+    line-height: 1em;
+  }
+
+  .ml1 .line {
+    position: absolute;
+    left: 15%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 3px;
+    width: 93%;
+    background-color: #FF0000;
+    transform-origin: 0.5 0;
+  }
+
+  .ml1 .ampersand {
+    color: #FFFFFF;
+    font-family: Baskerville, "EB Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    width: 1em;
+    margin-right: -0.1em;
+    margin-left: -0.1em;
+  }
+
+  .ml1 .letters {
+    display: inline-block;
+    opacity: 0;
+  }

@@ -1,0 +1,27 @@
+最高管理員
+管理員 | 賣家  
+會員
+
+
+每一頁網頁 最上面加讀資料庫 確定session ID 有值 是會員
+
+
+
+
+
+CREATE TABLE `order` (
+	id int NOT NULL AUTO_INCREMENT,
+
+	username not null
+	datestemp not null
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+INSERT INTO order VALUES( 1, 2020-05-11 20:50:30  , daniel, A1);
+INSERT INTO orderdeteil VALUES( A1, p1,  3 , 450);
+INSERT INTO orderdeteil VALUES( A1, p2,  4 , 480);
+
+
+
+form/backstage  --> 測試成功 功能整長
+shppingCart.php --> 新增葉面
