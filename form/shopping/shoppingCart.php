@@ -1,21 +1,31 @@
 <?php include '../top.php';?>
+<script>
 
+  function isChange(){
+     document.getElementById("form1").submit();
+  }
+
+
+
+</script>
 <?php
   @session_start();
 
   include '../../DB/DB.php';
 
-  $sql = "SELECT * FROM orderdeteil WHERE username = '".$_SESSION['username']."' ";
+  $sql = "SELECT * FROM orderdeteil JOIN member on member.name = '".$_SESSION['username']."' WHERE username = '".$_SESSION['username']."' ";
+  
   $result = $conn->query($sql);
 
   echo "<br><form id='form1' method='post' enctype='multipart/form-data' action='../../controller/shopping/editShoppingCart.php' class='edit-form'>";
 
     echo "<table style='background-color:#111;'>";
 
-    if($row = $result->fetch_assoc()) {
+    if($rowA = $result->fetch_assoc()) {
 
-      $data_str = $row['orderList'];
+      $data_str = $rowA['orderList'];
       $json = json_decode($data_str, true);
+      
       $elementCount  = count($json);
       $find = 0;
       $amount = 0;
@@ -32,8 +42,8 @@
           echo "<tr>
               <td width=20%><img src=".$row['imgPath']."></td>
               <td width=20%>$row[name]</td>
-              <td><input type='number' class='count' name='id_a[]' style='display:none;' value='".$pid_temp."'></td>
-              <td><input type='number' name='count[]' value='".$count_temp."'></td>
+              <td><input type='number' class='count' name='id_a[]' style='display:none;'  value='".$pid_temp."'></td>
+              <td><input type='number' name='count[]' oninput=\"isChange()\" value='".$count_temp."'></td>
               <td width=20%>$:$sum</td>
 
             </tr>";
@@ -49,11 +59,16 @@
     }
     echo "</table>";
 
-  echo "<center><p>共計:$amount</p></center>";
+  echo "<center><p>共計: 新台幣 ".number_format($amount). " 元整</p></center>";
+
+  echo "<center><p>基本資料 : </p></center>";
+  echo "<center>地址: <input type='text' style = 'font-size:0.6em;height:30px;width:300px;border-radius:5px;' value = '".$rowA['address']."'></center><p>";
+  echo "<center>電話: <input type='text' style = 'font-size:0.6em;height:30px;width:300px;border-radius:5px;' value = '".$rowA['phone']."'></center><hr>";
+
+
 
   echo "<div id='content' style='padding-left: 42%;'>
-          <input type='submit' name='sub' value='結帳'>
-          
+          <input type='submit' name='sub' id='temp_check' value='結帳'>
           <input type='button' onclick=location.href='/62lab/form/store.php' value='再逛逛'>
         </div>
         </form>";

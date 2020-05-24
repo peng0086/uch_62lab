@@ -24,7 +24,7 @@
 
   			echo "
 				<form method='post' enctype='multipart/form-data'  action='../controller/shopping/addProdInCart.php?id=".$row["id"]."' class='edit-form'>
-					<div id='content' style='padding-left: 25%;'>
+					<div id='content' style='padding-left: 37%;'>
 						<input type='number' name='count' value='1'>
 						<input type='submit' name='sub' value='加入購物車'>
 						<input type='button' onclick=location.href='/62lab/form/store.php' value='再逛逛'>

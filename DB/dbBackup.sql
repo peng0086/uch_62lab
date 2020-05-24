@@ -29,7 +29,7 @@ CREATE TABLE `comment` (
   `reply` text DEFAULT NULL,
   `mid` char(30) NOT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES (1,'2020-03-29 18:12:28','good!!','謝謝 thank!!!','b10613062'),(10,'2020-05-13 01:16:13','讚!!!','謝謝','b10613058'),(16,'2020-05-24 19:23:51','專題加油!!!','感謝支持!!!','b10613062');
+INSERT INTO `comment` VALUES (1,'2020-03-29 18:12:28','good!!','謝謝 thank!!!','b10613062'),(10,'2020-05-13 01:16:13','讚!!!','謝謝','b10613058'),(16,'2020-05-24 19:23:51','專題加油!!!','感謝支持!!!','b10613062'),(18,'2020-05-24 23:07:07','棒','','b10613155');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `orderdeteil` (
 
 LOCK TABLES `orderdeteil` WRITE;
 /*!40000 ALTER TABLE `orderdeteil` DISABLE KEYS */;
-INSERT INTO `orderdeteil` VALUES (4,' [{\"productID\":2,\"count\":13},{\"productID\":\"4\",\"count\":\"1\"},{\"productID\":\"20\",\"count\":\"4\"},{\"productID\":\"3\",\"count\":2},{\"productID\":\"24\",\"count\":\"1\"}] ','peng','2020-05-20 15:29:53'),(6,'[{\"productID\":4,\"count\":3}]','1234','2020-05-21 13:24:23'),(7,'[{\"productID\": 3 ,\"count\": 2}]','Daniel','2020-05-24 16:19:30');
+INSERT INTO `orderdeteil` VALUES (4,'[{\"productID\":4,\"count\":3}]','peng','2020-05-20 15:29:53'),(6,'[{\"productID\":4,\"count\":3}]','1234','2020-05-21 13:24:23'),(7,'[{\"productID\":4,\"count\":3}]','Daniel','2020-05-24 16:19:30');
 /*!40000 ALTER TABLE `orderdeteil` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +125,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'T10小燈',150,20,'顏色:單一白色，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_1.png'),(2,'T10解碼小燈',600,202,'顏色:單一白色，高量燈泡，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_2.png'),(3,'30CM鋁條燈',800,200,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_3.png'),(4,'60CM鋁條燈',1000,4,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_4.png'),(20,'水晶淚眼日型燈',5500,2000,'白黃雙色，開機刷燈模式，流水跑馬方向燈。','/62lab/imgs/prod/led_5.png'),(21,'氣氛燈',1800,2000,'顏色：七彩，增加車內行車氣氛。','/62lab/imgs/prod/led_6.png'),(22,'車底燈',900,2000,'汽車分前後左右，機車分前中後，價格歡迎私訊聊聊!!!','/62lab/imgs/prod/led_7.png'),(24,'30cm軟燈條',450,1000,'顏色:白藍紅紫黃綠冰藍，軟式燈條，用於多變的位置，變化性高、防水。','/62lab/imgs/prod/led_14.png');
+INSERT INTO `product` VALUES (1,'T10小燈',150,20,'顏色:單一白色，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_1.png'),(2,'T10解碼小燈',600,202,'顏色:單一白色，高量燈泡，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_2.png'),(3,'30CM鋁條燈',800,200,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_3.png'),(4,'60CM鋁條燈',1000,4,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_4.png'),(20,'水晶淚眼日型燈',5500,2000,'白黃雙色，開機刷燈模式，流水跑馬方向燈。','/62lab/imgs/prod/led_5.png'),(21,'氣氛燈',1800,2000,'顏色：七彩，增加車內行車氣氛。','/62lab/imgs/prod/led_6.png'),(22,'車底燈',900,2000,'汽車分前後左右，機車分前中後，價格歡迎私訊聊聊!!!','/62lab/imgs/prod/led_7.png');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -138,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-24 18:57:08
+-- Dump completed on 2020-05-24 23:43:56
