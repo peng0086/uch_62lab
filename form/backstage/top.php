@@ -29,8 +29,7 @@
 		}
 
 	?>
-
-        
+       
         <button class="dropdown-btn">商品區 
     		<i class="fa fa-caret-down"></i>
   		</button>
@@ -39,6 +38,7 @@
 			<a href="addproduct.php">上架</a>
 			<a href="depotproduct.php">補貨</a>
 		</div>
+
         <a href="backcomment.php">留言區</a>
         <a href="../home.php">結束</a>
         <a href="../logout.php">登出</a>

@@ -38,10 +38,7 @@
 		?>
 
 	</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
 	
 <?php include './foot.html';?>
-
-
-
-<!-- <form method='post' enctype='multipart/form-data'  action='../controller/product/addProdInCart.php?pid=".$row["id"]."' class='edit-form'> 
-<form method='post' enctype='multipart/form-data'  action='./shoppingCart.php?pid=".$row["id"]."' class='edit-form'>-->

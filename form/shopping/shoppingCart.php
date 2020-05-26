@@ -4,12 +4,7 @@
   function isChange(){
     document.getElementById("cool").value = '修改';
     document.getElementById("form1").submit();
-
-    
-    
   }
-
-
 
 </script>
 <?php
@@ -17,7 +12,7 @@
 
   include '../../DB/DB.php';
 
-  $sql = "SELECT * FROM orderdeteil JOIN member on member.name = '".$_SESSION['username']."' WHERE username = '".$_SESSION['username']."' ";
+  $sql = "SELECT * FROM shoppingcart JOIN member on member.name = '".$_SESSION['username']."' WHERE username = '".$_SESSION['username']."' ";
   
   $result = $conn->query($sql);
 
@@ -64,17 +59,33 @@
     }
     echo "</table>";
 
-  echo "<center><p>共計: 新台幣 ".number_format($amount). " 元整</p></center>";
+  echo "<center><p>共計 : 新台幣 ".number_format(@$amount). " 元整</p></center>";
 
   echo "<input id='cool' type='text' name='isDone' style='display:none;' value='結帳' >";
   echo "<center><p>基本資料 : </p></center>";
-  echo "<center>地址: <input type='text' style = 'font-size:0.6em;height:30px;width:300px;border-radius:5px;' value = '".$rowA['address']."'></center><p>";
-  echo "<center>電話: <input type='text' style = 'font-size:0.6em;height:30px;width:300px;border-radius:5px;' value = '".$rowA['phone']."'></center><hr>";
 
+  $sql2 = "SELECT * FROM recipient WHERE name = '".$_SESSION['username']."' ";
+  $result = $conn->query($sql2);
+  if($row = $result->fetch_assoc()){
+    @$username = $row['username'];
+    @$phone = $row['phone'];
+    @$address = $row['address'];
 
+    echo "<center>姓名 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"receptUsername\" value='".@$username."' placeholder='輸入正確的收件姓名'></center><p>";
+    echo "<center>地址 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"address\"  value='".@$phone."'></center><p>";
+    echo "<center>電話 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"phone\" value='".@$address."'></center><hr>";
+  }
+  else {
+   echo "<center>姓名 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;'  name=\"receptUsername\" placeholder='輸入正確的收件姓名'></center><p>";
+    echo "<center>地址 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"address\" ></center><p>";
+    echo "<center>電話 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"phone\"></center><hr>";
+
+  }
+
+ 
 
   echo "<div id='content' style='padding-left: 42%;'>
-          <input type='submit' name='sub' id='temp_check' value='結帳'>
+          <input type='submit' name='sub' value='結帳'>
           <input type='button' onclick=location.href='/62lab/form/store.php' value='再逛逛'>
         </div>
         </form>";

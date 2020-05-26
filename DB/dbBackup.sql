@@ -38,7 +38,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES (1,'2020-03-29 18:12:28','good!!','謝謝 thank!!!','b10613062'),(10,'2020-05-13 01:16:13','讚!!!','謝謝','b10613058'),(16,'2020-05-24 19:23:51','專題加油!!!','感謝支持!!!','b10613062'),(18,'2020-05-24 23:07:07','棒','','b10613155');
+INSERT INTO `comment` VALUES (1,'2020-03-29 18:12:28','good!!','謝謝 thank!!!','b10613062'),(10,'2020-05-13 01:16:13','讚!!!','謝謝','b10613058'),(18,'2020-05-24 23:07:07','棒','','b10613155');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +62,7 @@ CREATE TABLE `member` (
   `imgPath` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mid` (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE `orderdeteil` (
   `username` varchar(20) NOT NULL,
   `createDate` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,6 @@ CREATE TABLE `orderdeteil` (
 
 LOCK TABLES `orderdeteil` WRITE;
 /*!40000 ALTER TABLE `orderdeteil` DISABLE KEYS */;
-INSERT INTO `orderdeteil` VALUES (4,'[{\"productID\":4,\"count\":3}]','peng','2020-05-20 15:29:53'),(6,'[{\"productID\":4,\"count\":3}]','1234','2020-05-21 13:24:23'),(7,'[{\"productID\":4,\"count\":3}]','Daniel','2020-05-24 16:19:30');
 /*!40000 ALTER TABLE `orderdeteil` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,8 +124,59 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'T10小燈',150,20,'顏色:單一白色，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_1.png'),(2,'T10解碼小燈',600,202,'顏色:單一白色，高量燈泡，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_2.png'),(3,'30CM鋁條燈',800,200,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_3.png'),(4,'60CM鋁條燈',1000,4,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_4.png'),(20,'水晶淚眼日型燈',5500,2000,'白黃雙色，開機刷燈模式，流水跑馬方向燈。','/62lab/imgs/prod/led_5.png'),(21,'氣氛燈',1800,2000,'顏色：七彩，增加車內行車氣氛。','/62lab/imgs/prod/led_6.png'),(22,'車底燈',900,2000,'汽車分前後左右，機車分前中後，價格歡迎私訊聊聊!!!','/62lab/imgs/prod/led_7.png');
+INSERT INTO `product` VALUES (1,'T10小燈',150,20,'顏色:單一白色，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_1.png'),(2,'T10解碼小燈',600,199,'顏色:單一白色，高量燈泡，用於小燈、尾燈、牌照燈等T10規格需解碼之燈泡。','/62lab/imgs/prod/led_2.png'),(3,'30CM鋁條燈',800,200,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_3.png'),(4,'60CM鋁條燈',1000,1,'顏色:白藍紅紫，硬式燈條，用於日型燈、氣霸燈、底燈、後車廂燈。','/62lab/imgs/prod/led_4.png'),(20,'水晶淚眼日型燈',5500,20,'白黃雙色，開機刷燈模式，流水跑馬方向燈。','/62lab/imgs/prod/led_5.png'),(21,'氣氛燈',1800,2000,'顏色：七彩，增加車內行車氣氛。','/62lab/imgs/prod/led_6.png'),(22,'車底燈',900,2000,'汽車分前後左右，機車分前中後，價格歡迎私訊聊聊!!!','/62lab/imgs/prod/led_7.png');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `recipient`
+--
+
+DROP TABLE IF EXISTS `recipient`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `recipient` (
+  `name` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `phone` varchar(10) DEFAULT NULL,
+  `address` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recipient`
+--
+
+LOCK TABLES `recipient` WRITE;
+/*!40000 ALTER TABLE `recipient` DISABLE KEYS */;
+INSERT INTO `recipient` VALUES ('Daniel','daniel','daniel','daniel'),('peng','黃啟維','我高興','大路顛'),('ZHUANG','莊建鈞','0912345678','長沙路300號');
+/*!40000 ALTER TABLE `recipient` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shoppingcart`
+--
+
+DROP TABLE IF EXISTS `shoppingcart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shoppingcart` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `orderList` varchar(10000) DEFAULT NULL,
+  `username` varchar(20) NOT NULL,
+  `createDate` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shoppingcart`
+--
+
+LOCK TABLES `shoppingcart` WRITE;
+/*!40000 ALTER TABLE `shoppingcart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `shoppingcart` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -138,4 +188,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-24 23:43:56
+-- Dump completed on 2020-05-26 16:30:54

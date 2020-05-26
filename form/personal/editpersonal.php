@@ -33,20 +33,23 @@
         if(isset($img)){
             echo "<center><p><img src='$row[imgPath]'></p></center>
 
-                <p>圖片更新 : 
+                <p>圖片更新:
                 <input type='file' class='edit-form' name='my_file'></p>
 
                 <button class='edit-form' name='img'>確認修改</button>";
         }
 
         if(isset($update)){
-            echo "<p>密碼 : &nbsp
+            echo "<p>帳號 : 
+                <input type='text' class='edit-form' name='pwd' placeholder='請輸入密碼' value='$row[mid]' disabled='disabled'></p>
+
+                <p>密碼 : 
                 <input type='text' class='edit-form' name='pwd' placeholder='請輸入密碼' value='$row[pwd]'></p>
 
-                <p>電話 : &nbsp
+                <p>電話 : 
                 <input type='text' class='edit-form' name='phone' placeholder='請輸入電話' value='$row[phone]'></p>
                
-                <p>信箱 : &nbsp
+                <p>信箱 : 
                 <input type='text' class='edit-form' name='email' placeholder='請輸入email' value='$row[email]'></p>
                 <button class='edit-form' name='update'>確認修改</button>";
         }
@@ -62,5 +65,6 @@
 
         
 ?>
+<br><hr>
 
 <?php include '../foot.html'; ?>

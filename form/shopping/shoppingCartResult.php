@@ -5,20 +5,21 @@
 
   include '../../DB/DB.php';
 
-  $sql = "SELECT * FROM orderdeteil WHERE username = '".$_SESSION['username']."' ";
+  $sql = "SELECT * FROM orderdeteil  WHERE username = '".$_SESSION['username']."' ORDER BY id DESC LIMIT 0 , 1 ";
+  
   $result = $conn->query($sql);
-
-  echo "<form method='post' enctype='multipart/form-data' action='../../controller/shopping/addProdInCart.php?name=".$_SESSION['username']."' class='edit-form'>";
 
     echo "<table style='background-color:#111;'>";
 
-    if($row = $result->fetch_assoc()) {
+    if($rowA = $result->fetch_assoc()) {
 
-      $data_str = $row['orderList'];
+      $data_str = $rowA['orderList'];
       $json = json_decode($data_str, true);
+      
       $elementCount  = count($json);
       $find = 0;
       $amount = 0;
+      $sum = 0;
       for ($i=0; $i < $elementCount; $i++) {
         $pid_temp = $json[$i]['productID'];
         $count_temp = $json[$i]['count'];
@@ -31,29 +32,34 @@
           echo "<tr>
               <td width=20%><img src=".$row['imgPath']."></td>
               <td width=20%>$row[name]</td>
-              <td width=20%>$count_temp</td>
 
+              <td>$count_temp /個</td>
               <td width=20%>$:$sum</td>
+
             </tr>";
 
           echo "<tr height=10></tr>";      
         }
-      $amount = $sum + $amount;
-      }    
+
+        $amount += $sum ;
+      }
+     
+    }else{
+      echo "<h1>尚未有購物清單!!!</h1>";
     }
     echo "</table>";
-    
-  echo "<center><p>共計:$amount</p></center>";
 
-  echo "<div id='content' style='padding-left: 42%;'>
-    <input type='submit' name='sub' value='結帳'>
-    <input type='button' onclick=location.href='/62lab/form/store.php' value='再逛逛'>
-  </div>
-  </form>";
+  echo "<center><h1>共計: 新台幣 ".number_format(@$amount). " 元整</h1></center>";
 
-  echo "<p>由於商品單價高，本賣場只提供匯款後宅配<p>
-        <p>先與客服人員聯繫後結帳!!!</p>";
+  echo "<div id='content'>
+          <input type='button' onclick=location.href='/62lab/form/store.php' value='返回商場'>
+        </div>";
+
+  echo "<h1>已將此筆訂單,交由後台人員處理<br>確認無誤後,出貨日為三到五個工作天<br>感謝您在本賣場的消費!!!</h1>";
 
   $conn->close();
 
 ?>
+<hr>
+
+<?php include '../foot.html';?>

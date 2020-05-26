@@ -15,8 +15,8 @@
 			echo "<tr bgcolor=$color>
 					<td width=20>$i</td>
 					<td>$row[name]</td>
-					<td>$row[phone]</td>
-					<td>$row[email]</td>
+					<td>".substr($row['phone'],0,  4)."***".substr($row['phone'],  -3)."</td>
+					<td>".substr($row['email'],0,  5)."*******@***"."</td>
 					<td>$row[comdate]</td></tr>";
 			echo "<tr bgcolor=$color height=60>
 					<td colspan=5>$row[messenge]</td></tr>";
@@ -44,7 +44,6 @@
 				<input type='button' value='登入' onclick=location.href='login.php'>
 				<input type='button' value='註冊' onclick=location.href='register.php'>
 			</p>
-			<hr>
 			</div>";
 
 	}else {
@@ -65,10 +64,12 @@
 						<input type='button' name='sub' value='檢視留言' onclick=location.href='comment.php'>
 					</p>
 			   	</form>
-			<hr>
 			</div>";
 	}
 
 ?>
+
+<br><br><br><br><br><br><br><br><br><br><br><hr>
+
 	
 <?php include './foot.html';?>

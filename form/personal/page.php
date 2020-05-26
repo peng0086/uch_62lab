@@ -46,4 +46,6 @@
 
 ?>
 
+<br><hr>
+
 <?php include '../foot.html'; ?>
