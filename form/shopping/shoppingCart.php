@@ -72,13 +72,13 @@
     @$address = $row['address'];
 
     echo "<center>姓名 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"receptUsername\" value='".@$username."' placeholder='輸入正確的收件姓名'></center><p>";
-    echo "<center>地址 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"address\"  value='".@$phone."'></center><p>";
-    echo "<center>電話 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"phone\" value='".@$address."'></center><hr>";
+    echo "<center>電話 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"phone\"  value='".@$phone."'></center><p>";
+    echo "<center>地址 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"address\" value='".@$address."'></center><hr>";
   }
   else {
    echo "<center>姓名 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;'  name=\"receptUsername\" placeholder='輸入正確的收件姓名'></center><p>";
-    echo "<center>地址 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"address\" ></center><p>";
-    echo "<center>電話 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"phone\"></center><hr>";
+    echo "<center>電話 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"phone\" ></center><p>";
+    echo "<center>地址 : <input type='text' style='font-size:0.6em;height:30px;width:300px;border-radius:5px;' name=\"address\"></center><hr>";
 
   }
 

@@ -65,8 +65,8 @@
     @$address = $row['address'];
 
     echo "<center>姓名 : ".@$username."</center><p>";
-    echo "<center>地址 : ".@$phone."</center><p>";
-    echo "<center>電話 : ".@$address."</center><hr>";
+    echo "<center>電話 : ".@$phone."</center><p>";
+    echo "<center>地址 : ".@$address."</center><hr>";
   }
   echo "<div id='content' style='padding-left: 42%;'>
           <input type='submit' name='sub' value='確認'>
